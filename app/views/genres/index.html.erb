@@ -1,0 +1,16 @@
+<h1><%= link_to "All Tags", genres_path(@genre) %></h1>
+
+<ul id="tags">
+  <% @genres.each do |tag| %>
+    <li>
+    <%= link_to genre.name, genres_path(genre) %>
+
+    </li>
+  <% end %>
+</ul> 
+<% if logged_in? %>
+<%= link_to "Delete Tag", tags_path(@tag), method: :delete, data: {confirm:"Are You Sure You Want To Delete This?"} %>
+<% end %>
+<%= link_to "<< Back to Articles List", articles_path %>
+
+

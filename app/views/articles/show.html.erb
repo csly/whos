@@ -57,10 +57,61 @@
  
 </span></h3></td>
 </tr>
-
-
 </table>
+<table width="93%">
+<tr>
+<td width="100%"><hr></td>
+</tr>
+</table>
+<table width="93%">
+<tr>
+<td width="15%" valign="top"><h3><span class="labeldesc">Type </span></h3></td>
+<td width="85%" valign="top"><h3><span class="deet"><% @article.types.any? %>
+  <% @article.types.each do |type| %>
+  <%= link_to type.name, tagged_url(:type => type.name) %>
 
+<% end %>
+  
+ 
+</span></h3></td></tr>
+</table>
+<table width="93%">
+<tr>
+<td width="100%"><hr></td>
+</tr>
+</table>
+<table width="93%">
+<tr>
+<td width="15%" valign="top"><h3><span class="labeldesc">Genres </span></h3></td>
+<td width="85%" valign="top"><h3><span class="deet"><% @article.genres.any? %>
+  <% @article.genres.each do |genre| %>
+  <%= link_to genre.name, tagged_url(:genre => genre.name) %>
+
+<% end %>
+  
+ 
+</span></h3></td>
+</tr>
+</table>
+ 
+ <table width="93%">
+<tr>
+<td width="100%"><hr></td>
+</tr>
+</table>
+<table width="93%">
+<tr>
+<td width="15%" valign="top"><h3><span class="labeldesc">Countries </span></h3></td>
+<td width="85%" valign="top"><h3><span class="deet"><% @article.countries.any? %>
+  <% @article.countries.each do |country| %>
+  <%= link_to country.name, tagged_url(:country => country.name) %>
+
+<% end %>
+  
+ 
+</span></h3></td>
+</tr>
+</table>
  
 	 
 

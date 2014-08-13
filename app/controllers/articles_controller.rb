@@ -53,9 +53,25 @@ class ArticlesController < ApplicationController
   		end  
 	end
 
+	def type
+ 		 if params[:type].present? 
+   		 @articles = Article.tagged_with(params[:type])
+ 		 else 
+   		 @articles = Article.all
+  		end  
+	end
+
 	 def featured
  		 if params[:featured].present? 
    		 @articles = Article.find(params[:featured])
+ 		 else 
+   		 @articles = Article.all
+  		end  
+	end
+
+	def genres
+ 		 if params[:genre].present? 
+   		 @articles = Article.tagged_with(params[:genre])
  		 else 
    		 @articles = Article.all
   		end  

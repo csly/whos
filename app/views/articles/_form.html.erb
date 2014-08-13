@@ -42,6 +42,17 @@
 <%= f.text_field :tag_list %>
 	 </p> 
 	 
+ <p> <%= f.label :type_list, "Type (separated by commas)" %><br />
+  <%= f.text_field :type_list %>
+  </p>
+
+  <p> <%= f.label :genre_list, "Genre (separated by commas)" %><br />
+  <%= f.text_field :genre_list %>
+  </p>
+
+  <p> <%= f.label :country_list, "Country (separated by commas)" %><br />
+  <%= f.text_field :country_list %>
+  </p>
  
 	 <p><%= f.label :featured? %>
 	 <%= f.check_box :featured  %>

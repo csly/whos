@@ -12,4 +12,6 @@ get 'logout' => 'author_sessions#destroy'
 get 'tagged' => 'articles#tagged', :as => 'tagged'  
 get 'featured' => 'articles#featured', :as => 'featured'   
 
+ 
+
 end

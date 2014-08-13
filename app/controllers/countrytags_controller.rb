@@ -1,0 +1,2 @@
+class CountrytagsController < ApplicationController
+end

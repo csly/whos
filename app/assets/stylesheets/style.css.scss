@@ -1,0 +1,146 @@
+$primary_color: #AAA;
+$bucks_blue:#177cb4;
+$bucks_pink: #bc1c6c;
+
+body {
+  background-color: $primary_color;
+  width: 825px;
+  font: {
+    family: Verdana;
+    size: 14px;
+
+  }
+}
+
+a {
+  color: #0000FF;
+  img {
+    border: none;
+  }
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+#container {
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px 0px;
+  border: solid 1px #e7e7e7;
+  margin-top: -20px;
+  min-height: 450px;
+}
+
+#content {
+min-width:80%;
+padding-left:80px;
+  clear: both;
+  padding-top: 20px;
+}
+
+.contentshow {
+padding-left:5px;
+  max-width:93%; 
+  clear: both;
+  padding-top: 20px;
+}
+
+li.featured {
+  
+padding:1em  em .8em;
+margin-bottom: 1em; 
+}
+li.featured a{
+  color: $bucks_pink !important;
+}
+
+li.featured span.date{
+  background-color: $bucks_pink !important;
+  color: #eee;
+}
+li.featured hr{
+  background-color: $bucks_pink !important;
+ 
+}
+
+li.notfeatured {
+  
+padding:1em 0 .8em;
+}
+span.date {
+  font-size:80%;  
+  float:right; 
+  color: $bucks_blue;
+  background-color:#eeeeee;
+  padding-left:10px;
+    padding-right:10px; 
+    padding-top:2px;
+    height:29px;
+}
+
+
+.select-style { 
+    width: 129px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #eaeaea url("../../drop.png") no-repeat 90% 50%; 
+     
+    margin-right:30px;
+}
+
+.select-style select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
+}
+
+
+ 
+p.flash {
+
+
+background-color:$bucks_blue;
+border:3px solid #eaeaea;
+-moz-background-clip:padding;
+-webkit-background-clip:padding;
+-o-background-clip:padding-box;
+-ms-background-clip:padding-box;
+-khtml-background-clip:padding-box;
+background-clip:padding-box;
+text-shadow:rgba(0, 0, 0, 0.6) 0 -1px;
+color: #eaeaea;
+margin:0 auto;
+position:absolute;
+top:-51px;
+left:0;
+padding:.8em .8em;
+width:100%;
+text-align:center;
+border-top:0;
+}
+
+ 
+p.flash:empty {
+
+height:0px;
+overflow:hidden;
+padding:0;
+border-width:0;
+-moz-box-shadow:none;
+-webkit-box-shadow:none;
+-o-box-shadow:none;
+box-shadow:none;
+background:none;
+}

@@ -1,0 +1,13 @@
+ 
+<ul id="articles">
+  <% @articles.each do |article| %>
+	<li> 
+	<%= link_to article.title, article_path(article) %>
+	</li><br><br>
+  <% end %>
+</ul>
+<% if logged_in? %><br><br>
+<%= link_to "Create a New Article", new_article_path, class: 'myButton' %>
+<% end %>
+<br><br>
+<%= link_to "<< Back to Articles List", articles_path %>

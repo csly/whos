@@ -1,0 +1,93 @@
+<h1 class="main_art_tit2"> Who's Looking List</h1>
+
+ <br /> <br /> 
+ <table width="100%">
+ <tr>
+ <td valign="top">
+ <form id="countrysearch">
+<label> Countries: </label>
+<div class="select-style">
+<select>
+    <option value="country1">United Kingdom</option>
+    <option value="country2">United States</option>
+    <option value="country3">Worldwide</option>
+    <option value="country4">Europe</option>
+  </select>
+  </div>
+  </form>
+  </td> 
+  <td valign="top">
+   <form id="genresearch">
+<label> Genre: </label>
+<div class="select-style">
+ <select>
+    <option value="genre1">Pop</option>
+    <option value="genre2">Rock</option>
+    <option value="genre3">House</option>
+    <option value="genre4">Dance</option>
+  </select>
+  </div> 
+   </form>
+   </td>
+    <td valign="top">
+   <form id="typesearch">
+<label> Type: </label>
+<div class="select-style">
+ <select>
+    <option value="type1">Top Line</option>
+    <option value="type2">Producer</option>
+    <option value="type3">Songwriter</option> 
+  </select>
+  </div>
+</form>
+</td>
+<td>
+<input type="submit" value="Filter">
+</td>
+ </tr>
+ </table>
+ <br /> <br /> <br /> <br />
+<ul id="articles">
+  <% @articles.each do |article| %>
+ 
+
+
+	
+<% if article.featured == true %>
+
+       <li class="featured">  
+  <%= link_to article.title, article_path(article) %>
+   
+    <span class="date">
+  <% if false %><%= article.created_at.strftime('%A, %-d %B %Y ') %><% end %> <%= article.dead_line %></span>   <div id="clear"></div><div class="moveup"><hr><br />
+     <p class="article_main"><%= article.preview %>...  <%= link_to "Read More", article_path(article) %></p>  
+
+     </div>
+     <br /> 
+
+  </li>
+  <% else %>
+   <li class="notfeatured">  
+  <%= link_to article.title, article_path(article) %>
+   
+    <span class="date">
+  <% if false %><%= article.created_at.strftime('%A, %-d %B %Y ') %><% end %> <%= article.dead_line %></span>   <div id="clear"></div><div class="moveup"><hr><br />
+     <p class="article_main"><%= article.preview %>...  <%= link_to "Read More", article_path(article) %></p>  
+
+     </div>
+     <br /> 
+
+  </li>
+      <% end %>
+
+  <% end %>
+</ul><% if false %>
+<%= will_paginate @articles, :page_links => false %><% end %><br /><br />
+<% if logged_in? %>
+<%= link_to "Create a New Brief", new_article_path, class: 'myButton' %>
+<% end %>
+
+ <br />
+
+
+ 

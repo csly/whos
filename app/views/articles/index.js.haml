@@ -1,0 +1,7 @@
+
+
+$('.articles').append('#{escape_javascript(render partial: "shared/articles", :locals => { :articles => @articles })}');
+$('a.load-more-briefs').attr('href', '#{articles_path page: @articles.next_page}');
+ 
+- unless @articles.next_page
+  $('a.load-more-briefs').remove();

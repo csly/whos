@@ -1,0 +1,7 @@
+<h1> Edit an Article </h1>
+
+<%= render partial: 'form' %>
+
+&nbsp;<%= link_to "Delete Article", article_path(@article), class: 'myButton', method: :delete, data: {confirm:"Are You Sure You Want To Delete This?"} %><br /><br />
+
+ &nbsp;<a href="../" class="myButton"><span>&nbsp;&lt; </span>Back To List</a>

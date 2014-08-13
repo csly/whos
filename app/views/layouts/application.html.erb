@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Who's Looking List</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %> 
+</head>
+<body>
+<p class="flash"><%= flash.notice %></p>
+<div id="container">
+<div class="bannerimg">
+<a href="http://www.bucksmusicgroup.co.uk" target="_blank"><img src="../../newbanner.png"></a>
+</div>
+<div id="content">
+<%= yield %>
+<br />
+
+</div>
+</div>
+</body>
+</html>

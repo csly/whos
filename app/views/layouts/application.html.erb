@@ -2,21 +2,47 @@
 <html>
 <head>
   <title>Who's Looking List</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'screen', 'data-turbolinks-track' => true %>
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %> 
 </head>
 <body>
 <p class="flash"><%= flash.notice %></p>
 <div id="container">
+
 <div class="bannerimg">
 <a href="http://www.bucksmusicgroup.co.uk" target="_blank"><img src="../../newbanner.png"></a>
 </div>
 <div id="content">
+<div class="social">
+<a href="https://www.facebook.com/bucksmusicgroup" target="_blank">
+<img src="http://www.bucksmusicgroup.com/wp-content/uploads/2014/07/facebook.png" width="25">
+</a>
+<a href="https://www.twitter.com/bucksmusicgroup" target="_blank">
+<img src="http://www.bucksmusicgroup.com/wp-content/uploads/2014/07/twitter.png" width="25">
+</a>
+<a href="https://www.soundcloud.com/bucksmusicgroup" target="_blank">
+<img src="http://www.bucksmusicgroup.com/wp-content/uploads/2014/07/soundcloud.png" width="25">
+</a>
+<a href="https://www.youtube.com/user/Synclinks" target="_blank">
+<img src="http://www.bucksmusicgroup.com/wp-content/uploads/2014/07/youtube.png" width="25">
+</a>
+</div>
+<%= search_form_for @search do |f| %>
+
+<%= f.text_field :body_cont, :placeholder => "Search Briefs..." %>  
+<% if false %><%= link_to "Print View", '#', onclick: "printpage()" %><% end %>
+
+<%= f.submit " " %> <% end %><br />
+<h1 class="main_art_tit2"> Who's Looking List </h1> 
 <%= yield %>
 <br />
 
 </div>
+
 </div>
+
+
 </body>
 </html>

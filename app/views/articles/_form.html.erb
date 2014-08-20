@@ -41,17 +41,20 @@
 	<p> <%= f.label :tags %>
 <%= f.text_field :tag_list %>
 	 </p> 
+	  <p> <%= f.label :available_list, "Where is it available?  (separated by commas)" %><br />
+  <%= f.text_field :available_list %>
+  </p>
 	 
- <p> <%= f.label :type_list, "Type (separated by commas)" %><br />
-  <%= f.text_field :type_list %>
+ <p> <%= f.label :label_list, "Label (separated by commas)" %><br />
+  <%= f.text_field :label_list %>
   </p>
 
   <p> <%= f.label :genre_list, "Genre (separated by commas)" %><br />
   <%= f.text_field :genre_list %>
   </p>
 
-  <p> <%= f.label :country_list, "Country (separated by commas)" %><br />
-  <%= f.text_field :country_list %>
+  <p> <%= f.label :artist_list, "Artist (separated by commas)" %><br />
+  <%= f.text_field :artist_list %>
   </p>
  
 	 <p><%= f.label :featured? %>

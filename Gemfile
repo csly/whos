@@ -49,4 +49,6 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'RedCloth', '~> 4.2.9'
 
 gem 'tinymce-rails'
+
+gem 'ransack'
  

@@ -1,12 +1,19 @@
 class ArticlesController < ApplicationController
 	include ArticlesHelper
 
+
 	http_basic_authenticate_with :name => "bucks", :password => "testing"
 
 	before_filter :require_login, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
-		@articles = Article.featured_article + Article.unfeatured_article 
+		@search = Article.all.search(params[:q])
+	 	@one = Article.featured_article.limit(3) 
+		@two =  Article.all
+		@searched = @search.result.paginate(:page => params[:page], :per_page => 5)
+		@articles = Article.all.paginate(:page => params[:page], :per_page => 5)
+		@articles = @search.result.paginate(:page => params[:page], :per_page => 5)
+
 
   		 
 	end
@@ -77,10 +84,19 @@ class ArticlesController < ApplicationController
   		end  
 	end
   
- 
+ 	def show_all
+ 		@articles = Article.all
+ 	end
 	  
 
 
+	 def high_only
+ 		 if params[:featured].present? 
+   		 @articles = Article.find(params[:featured])
+ 		 else 
+   		 @articles = Article.all
+  		end  
+	end
 
 
 	 

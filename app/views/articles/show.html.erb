@@ -1,4 +1,6 @@
-<div class="contentshow"><h1 class="main_art_tit"> <%= @article.title %> </h1>
+<div class="contentshow">
+
+<div class="articleshowtitle"> </div>
  <br />
 
 <p>
@@ -6,84 +8,101 @@
         <%= image_tag @article.image.url %><br/>
   		<% end %>
   		
-	</p><hr>
- <h3 class="brief"><span class="labeldesc">Brief </span></h3><hr><p class="main_article_body"><br /><%= @article.body %><br /><br /><%= @article.biog %> </p><br /><hr> 
+	</p> 
+
+	<% if @article.featured == true %>
+
+   
+ 
+<span class="location"><div class="dating"><%= @article.available_list %></div> </span> 
+   <span class="dividersw"> </span>
+<span class="location"><div class="dating">High Priority</div> </span> 
+<% else %>
+<span class="location"><div class="dating"><%= @article.available_list %></div> </span> 
+
+<% end %>
+ <h3 class="brief"><span class="labeldesctitle"><%= @article.title %></span></h3>  
+
+  
+
+    <hr><p class="main_article_body"><br /><%= @article.body %><br /><br /><%= @article.biog %> </p><br /><hr> 
 
 
 
-<table width="93%">
+<table width="100%">
 <tr>
-<td width="15%" valign="top"><h3><span class="labeldesc">Deadline </span></h3></td>
-<td width="85%" valign="top"><h3><span class="deet"><%= @article.dead_line %></span> </h3></td>
+<td width="20%" valign="top"><h3><span class="labeldesc">Deadline </span></h3></td>
+<td width="80%" valign="top"><h3><span class="deet"><%= @article.dead_line %></span> </h3></td>
 </tr>
 </table>
-<table width="93%">
+<table width="100%">
 <tr>
 <td width="100%"><hr></td>
 </tr>
 </table>
-<table width="93%">
+<table width="100%">
 <tr>
-<td width="15%" valign="top"><h3><span class="labeldesc">Label </span></h3></td>
-<td width="85%" valign="top"><h3><span class="deet"><%= @article.label %></span> </h3></td>
+<td width="20%" valign="top"><h3><span class="labeldesc">Created At </span></h3></td>
+<td width="80%" valign="top"><h3><span class="deet"><%= @article.created_at.strftime('%A, %-d %B %Y ') %></span> </h3></td>
 </tr>
 </table>
-<table width="93%">
+<table width="100%">
 <tr>
 <td width="100%"><hr></td>
 </tr>
-</table>
-<table width="93%">
+</table> 
+<table width="100%">
 <tr>
-<td width="15%" valign="top"><h3><span class="labeldesc">Links </span></h3></td>
-<td width="85%" valign="top"><h3><span class="deet"><a href="http://<%= @article.website %>">Website</a>  
+<td width="20%" valign="top"><h3><span class="labeldesc">Links </span></h3></td>
+<td width="80%" valign="top"><h3><span class="deet"><a href="http://<%= @article.website %>">Website</a>  
  <a href="http://<%= @article.facebook %>">Facebook</a>  <a href="http://<%= @article.twitter %>">Twitter</a></span> </h3></td>
 </tr>
 </table>
-<table width="93%">
+<% if false %>
+<table width="100%">
 <tr>
 <td width="100%"><hr></td>
 </tr>
 </table>
-<table width="93%">
+<table width="100%">
 <tr>
-<td width="15%" valign="top"><h3><span class="labeldesc">Tags </span></h3></td>
-<td width="85%" valign="top"><h3><span class="deet"><% @article.tags.any? %>
+<td width="20%" valign="top"><h3><span class="labeldesc">Tags </span></h3></td>
+<td width="80%" valign="top"><h3><span class="deet"><% @article.tags.any? %>
   <% @article.tags.each do |tag| %>
   <%= link_to tag.name, tagged_url(:tag => tag.name) %>
-
+<% end %>
 <% end %>
   
  
 </span></h3></td>
 </tr>
 </table>
-<table width="93%">
+<table width="100%">
 <tr>
 <td width="100%"><hr></td>
 </tr>
 </table>
-<table width="93%">
+<table width="100%">
 <tr>
-<td width="15%" valign="top"><h3><span class="labeldesc">Type </span></h3></td>
-<td width="85%" valign="top"><h3><span class="deet"><% @article.types.any? %>
-  <% @article.types.each do |type| %>
-  <%= link_to type.name, tagged_url(:type => type.name) %>
+<td width="20%" valign="top"><h3><span class="labeldesc">Label </span></h3></td>
+<td width="80%" valign="top"><h3><span class="deet"><% @article.labels.any? %>
+  <% @article.labels.each do |label| %>
+  <%= link_to label.name, tagged_url(:label => label.name) %>
 
 <% end %>
   
  
 </span></h3></td></tr>
 </table>
-<table width="93%">
+<table width="100%">
 <tr>
 <td width="100%"><hr></td>
 </tr>
 </table>
-<table width="93%">
+<table width="100%">
 <tr>
-<td width="15%" valign="top"><h3><span class="labeldesc">Genres </span></h3></td>
-<td width="85%" valign="top"><h3><span class="deet"><% @article.genres.any? %>
+<td width="20%" valign="top"><h3><span class="labeldesc">Genres </span></h3></td>
+<td width="80%" valign="top"><h3><span class="deet"><% @article.genres.any? %>
   <% @article.genres.each do |genre| %>
   <%= link_to genre.name, tagged_url(:genre => genre.name) %>
 
@@ -94,17 +113,17 @@
 </tr>
 </table>
  
- <table width="93%">
+ <table width="100%">
 <tr>
 <td width="100%"><hr></td>
 </tr>
 </table>
-<table width="93%">
+<table width="100%">
 <tr>
-<td width="15%" valign="top"><h3><span class="labeldesc">Countries </span></h3></td>
-<td width="85%" valign="top"><h3><span class="deet"><% @article.countries.any? %>
-  <% @article.countries.each do |country| %>
-  <%= link_to country.name, tagged_url(:country => country.name) %>
+<td width="20%" valign="top"><h3><span class="labeldesc">Artist </span></h3></td>
+<td width="80%" valign="top"><h3><span class="deet"><% @article.artists.any? %>
+  <% @article.artists.each do |artist| %>
+  <%= link_to artist.name, tagged_url(:artist => artist.name) %>
 
 <% end %>
   

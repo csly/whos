@@ -22,8 +22,12 @@ function printpage()
   window.print()
   } 
 
+	 
+
    $(document).ready(function(){
         $("#example").dialog({modal: true, resizable: false, width: "80%", draggable: false,  height: 600});
+ 
+ 
 
     }); 
  
@@ -36,19 +40,18 @@ $("#example").position({
 
 $( "#example" ).dialog({
 	resizable: false,
-	autoOpen: false,
-	width: 600,
+	autoOpen: true, 
 	buttons: [
 		{
 			text: "Ok",
 			click: function() {
-				$( this ).dialog( "close" );
+				 $(this).dialog('close').dialog('remove');
 			}
 		},
 		{
 			text: "Cancel",
 			click: function() {
-				 $(this).destroy();
+				 $(this).dialog('close').dialog('remove');
 			}
 		}
 	]

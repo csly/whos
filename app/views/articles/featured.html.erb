@@ -1,36 +1,6 @@
   
-    <div id="example" class="flora" title="High Priority"><br />
-      <% @one.each do |article| %>
- 
-
- 
-       <li class="featured">  
-  <%= link_to article.title, article_path(article) %>
-    <span class="location"> <div class="dating"><%= article.available_list %> </div></span>
-
-   <span class="divider"> </span>
-   <span class="highpriority"> <div class="dating">High Priority </div></span>
-
-
-  <div id="clear"></div><div class="moveup"><hr>
-
-  <div class="moveup2"><br />
-     <p class="article_main"><%= article.preview %>...  <%= link_to "Read More", article_path(article) %></p>  <br />
-      <p class="article_main"><span class="deet">Label: <%= article.label_list %> </span> <br /><span class="deet">Genre: <%= article.genre_list %> </span><br /><span class="deet">Created At: <%= article.created_at.strftime('%A, %-d %B %Y ') %> </span></p></div>
-     </div>    <hr class="below">
-
-
-      
-     <br /> 
-
-  </li>
-   
-   <% end %>
-    </div>
-
-
- <br /> <br />  
- <table width="100%">
+ <br><br>
+<table width="100%">
  <tr>
  <td valign="top">
  <form id="countrysearch">
@@ -74,31 +44,20 @@
 <input type="submit" value="Filter">
 </td>
  </tr>
- </table>
- <br /> <a class="unfeatured" href="featured" title="Show high priority only">Show high priority only</a> <br /> <br /> 
-<br />  
-<ul id="articles">
-  <% @articles.each do |article| %>
- 
+ </table> 
+ <br /> <a class="featured" href="articles">Show high priority only</a> <br /> <br /> 
+ <br />
 
- 
- 
-
-   
+    <ul id="articles">
+    <% @articles.each do |article| %>
   <% if article.featured == true %>
+ 
     <li class="featured">  
       <%= link_to article.title, article_path(article) %>
    <span class="location"> <div class="dating"><%= article.available_list %> </div></span>
 
    <span class="divider"> </span>
    <span class="highpriority"> <div class="dating">High Priority </div></span>
-
-
-<% else %>
-  <li class="notfeatured">  
-    <%= link_to article.title, article_path(article) %>
-     <span class="location"><div class="dating"><%= article.available_list %></div> </span>  
-<% end %>
    <div id="clear"></div>
 
   <div class="moveup"><hr><div class="moveup2"><br />
@@ -109,16 +68,13 @@
     
 
   </li>
-     
+      <% else %>
 
   <% end %>
-</ul>
-<%= will_paginate @articles, :page_links => false %><br /><br />
-
-<% if logged_in? %>
-<%= link_to "Create a New Brief", new_article_path, class: 'myButton' %>
-<% end %>
-
- <br /> 
-
+  <% end %>
+</ul> 
+<a href="../" class="myButton"><span>&nbsp;&lt; </span>Back To List</a>
+   
+ 
+  
  

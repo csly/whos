@@ -11,6 +11,18 @@ body {
 
   }
 }
+a.featured {
+  
+  background: url('../../ticked.png') no-repeat left;
+  padding: 0 0 0 15px;
+  color: $bucks_blue;
+}
+a.unfeatured {
+  
+  background: url('../../unticked.png') no-repeat left;
+  padding: 0 0 0 15px;
+  color: $bucks_blue;
+}
 
 a {
   color: #0000FF;
@@ -18,7 +30,9 @@ a {
     border: none;
   }
 }
-
+#hotposts {
+  display:none;
+}
 .clear {
   clear: both;
   height: 0;

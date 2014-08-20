@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
 
 	before_filter :require_login, only: [:new, :create, :edit, :update, :destroy]
 
-	def index
+	def index 
 		@search = Article.all.search(params[:q])
 	 	@one = Article.featured_article.limit(3) 
 		@two =  Article.all
@@ -17,6 +17,8 @@ class ArticlesController < ApplicationController
 
   		 
 	end
+
+
 	def show
 		@article = Article.find(params[:id])
 	end
@@ -70,7 +72,16 @@ class ArticlesController < ApplicationController
 
 	 def featured
  		 if params[:featured].present? 
-   		 @articles = Article.find(params[:featured])
+   		 @articles = Article.featured_article.find(params[:featured])
+ 		 else 
+   		 @articles = Article.all
+  		end  
+	end
+
+
+	 def featured_article
+ 		 if params[:featured].present? 
+   		 @articles = Article.featured_article.find(params[:featured])
  		 else 
    		 @articles = Article.all
   		end  
